@@ -9,6 +9,7 @@ function App() {
             <Route exact path="/sign-in" render={() => <SignIn />} />
             <Route exact path="/sign-up" render={() => <SignUp />} />
             <Route exact path='/home' render={()=><Home/>}/>
+            <Route component={<SignUp/>}/>
          <Home/>
       </Switch>
   )
