@@ -24,6 +24,8 @@ export default function SignIn() {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(user),
+            'Access-Control-Allow-Origin':'http://book.alitechbot.uz/api/login' 
+
           };
           fetch("http://book.alitechbot.uz/api/login", requestOptions)
            .then(data=> data.json())
