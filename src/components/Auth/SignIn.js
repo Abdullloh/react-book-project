@@ -22,9 +22,10 @@ export default function SignIn() {
         }
         var requestOptions = {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 'Content-Type': 'application/json' ,
+            'Access-Control-Allow-Origin':'http://book.alitechbot.uz/api/login' },
             body: JSON.stringify(user),
-            'Access-Control-Allow-Origin':'http://book.alitechbot.uz/api/login' 
+           
 
           };
           fetch("http://book.alitechbot.uz/api/login", requestOptions)
