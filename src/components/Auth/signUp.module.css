@@ -1,0 +1,50 @@
+.signUpContainer{
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+.colLeft{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #C9AC8C;
+}
+.signContainer{
+    display: flex;
+    flex-direction: column;
+    line-height: 0;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+}
+input{
+    height: 44px;
+    width: 298px;
+    border-radius: 10px;
+    border: 1px solid #B4B4BB;
+    outline: none;
+    padding: 0 15px;
+    margin-top: 16px;
+}
+.colRight{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+.button{
+    width: 328px;
+    height: 46px;
+    border-radius: 50px;
+    background: #152540;
+    color: white;
+    cursor: pointer;
+    border: transparent;
+    margin-top: 20px;
+}
+.button:hover{
+    background: black;
+}

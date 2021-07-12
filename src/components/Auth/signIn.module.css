@@ -1,0 +1,43 @@
+.signInContainer{
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+.colLeft{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #C9AC8C;
+}
+.colRight{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+    width: 50%;
+}
+.button{
+    width: 328px;
+    height: 46px;
+    border-radius: 50px;
+    background: #152540;
+    color: white;
+    cursor: pointer;
+    border: transparent;
+    margin-top: 20px;
+}
+.signContainer{
+    display: flex;
+    flex-direction: column;
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+a{
+    color: rgba(84, 159, 249, 1);
+    text-decoration: none;
+    margin-left: 6px;
+}
