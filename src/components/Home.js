@@ -1,12 +1,27 @@
 import React from 'react'
+import {Link} from 'react-router-dom';
+import {Header} from './style/booksHome/HeaderStyle'
+import BooksContainer from './BookContainer'
+
+import ImgContainer from './ImgContainer'
+import Search from './Search';
 export default function Home() {
     return (
-        <div>
            <div className="container">
-              <header>
-                  Home Page
-              </header>
+              <Header>
+                  <a href="#">Badiiyat</a>
+                  <nav>
+                      <ul>
+                          <li><Link to='#'>Bosh sahifa</Link></li>
+                          <li><Link to='#'>Nasr</Link></li>
+                          <li><Link to='#'>Nazm</Link></li>
+                          <li><Link to='#'>Maqolalar</Link></li>
+                          <li><Link to='#'>Forum</Link></li>
+                      </ul>
+                  </nav>
+              </Header>
+              <ImgContainer> <Search/>  </ImgContainer>
+             <BooksContainer/>
            </div> 
-        </div>
     )
 }
