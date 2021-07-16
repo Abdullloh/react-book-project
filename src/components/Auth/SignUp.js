@@ -31,7 +31,7 @@ console.log(state);
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(user),
     };
-     fetch("http://book.alitechbot.uz/api/sign-up", requestOptions)
+     fetch("https://book.alitechbot.uz/api/sign-up", requestOptions)
       .then(data=>data.json())
       .then(result=>{
         console.log(result);

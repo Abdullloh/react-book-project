@@ -38,23 +38,24 @@ const Header = style.header`
                     height: 100%;
                     display: flex;
                     align-items: center;
-                    transition:1s;
+                    
                     &::before{
                         content:'';
                         position:absolute;
                         bottom:0;
                         height:2px;
                         left:0;
-                        width:100%;
+                        width:0%;
                         background-color:white;
-                        display:none;
-                        transition:1s;
+                        visibility:hidden;
+                        transition:0.5s;
                     }
                     &:hover{
+                        transition:0.5s;
                         &::before{
-                            display:block;
-                            transition:1s;
-
+                            width:100%;
+                            transition:0.5s;
+                            visibility: visible;
                         }
                     }
                 }

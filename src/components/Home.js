@@ -9,7 +9,7 @@ export default function Home() {
     return (
            <div className="container">
               <Header>
-                  <a href="#">Badiiyat</a>
+                  <Link to='./sign-up'>Badiiyat</Link>
                   <nav>
                       <ul>
                           <li><Link to='#'>Bosh sahifa</Link></li>
