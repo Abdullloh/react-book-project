@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
 import {Header} from './style/booksHome/HeaderStyle'
-import BooksContainer from './BookContainer'
+import BookContainer from './BookContainer'
 
 import ImgContainer from './ImgContainer'
 import Search from './Search';
@@ -21,7 +21,7 @@ export default function Home() {
                   </nav>
               </Header>
               <ImgContainer> <Search/>  </ImgContainer>
-             <BooksContainer/>
+             <BookContainer/>
            </div> 
     )
 }

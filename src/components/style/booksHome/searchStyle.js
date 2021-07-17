@@ -2,14 +2,14 @@ import styled from 'styled-components';
 
 
 const SearchContainer = styled.div`
+        position:relative;
+        bottom:20px;
         height: 169px;
         width: 1154px;
         max-width: 100%;
         background: #191919;
         box-shadow: 0px 4px 77px rgb(0 0 0 / 25%);
         border-radius: 15px;
-        position: absolute;
-        top: 296px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -21,7 +21,7 @@ const SearchContainer = styled.div`
         }
         input{
             height:47px;
-            width:709px;
+           width:709px;
             background: #404040;
             border-radius: 15px;
             border:none;

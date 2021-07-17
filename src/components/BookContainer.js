@@ -1,29 +1,40 @@
 import React ,{useState}from 'react';
 import axios from 'axios';
-import {BookContainers} from './style/booksHome/bookContainerStyle'
+import {BookContainerStyle} from './style/booksHome/bookContainerStyle'
+import Img from './Book.svg'
+
+
 export default function BookContainer() {
     // const[books,setBooks] = useState({
     //     title:'',
     //     price:'',
     //     author:''
     // })
-
-     const fetchBooks = () =>{
-       const payload = axios('https://book.alitechbot.uz/api/books')
+              
+  
+     const fetchBooks =  () =>{
+       const {data} =  axios('https://book.alitechbot.uz/api/books')
        .then(data=> {
+           console.log(data)
            const{docs} = data.data.payload
-        //    console.log(docs);
+           console.log(docs);
            docs.forEach(item=>{
                const{descrition,country,language,pages,price,title,imageLink,_id} = item
                let container = document.getElementById('books')
                container.innerHTML += `
-                <li>${title} </li>
+                <div className="book">
+                   <img src='${Img}'>
+                   <div className="info">
+                      <h6>Dunyoning ishlari</h6>
+                      <p>Dunyoning ishlari</p>
+                   </div>
+                </div>
                `
-           })
+            })
        })
      }
     return (
-        <BookContainers>
+        <BookContainerStyle>
         <div id='bookContainer'>
             <h3>Asosiy kategoriyalar</h3>
             <ul>
@@ -34,9 +45,9 @@ export default function BookContainer() {
             </ul>
         </div>
         <div id="books">
-
+            {fetchBooks()}
         </div>
-        </BookContainers>
+        </BookContainerStyle>
   
     )
 }

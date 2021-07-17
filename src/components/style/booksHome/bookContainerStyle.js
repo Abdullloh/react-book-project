@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const BookContainers = styled.div`
+const BookContainerStyle = styled.div`
 position: relative;
 top: 120px;
 padding: 10px 0;
@@ -18,6 +18,7 @@ padding: 10px 0;
         color: rgba(255, 255, 255, 0.6);
         font-size: 20px;
         width: 787px;
+        align-items: center;
         height: 40px;
         justify-content: space-around;
         li{
@@ -27,6 +28,12 @@ padding: 10px 0;
         }
     }
 }
+#books{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 80px;
+}
   
 ` 
-export {BookContainers}
+export {BookContainerStyle}
