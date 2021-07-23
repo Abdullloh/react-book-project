@@ -5,7 +5,6 @@ const Header = style.header`
     height:80px;
     max-width:100%;
     background: #191919;
-    border: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
     padding:0 30px 0 20px;
     align-items: center;  
@@ -26,7 +25,6 @@ const Header = style.header`
             align-items: center;
             margin-top: 0;
             list-style:none;
-            margin-right:250px;
             li{
                 margin-right:33.5px;
                 height: 100%;

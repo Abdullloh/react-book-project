@@ -2,12 +2,14 @@ import React from 'react'
 import {Link} from 'react-router-dom';
 import {Header} from './style/booksHome/HeaderStyle'
 import BookContainer from './BookContainer'
-
+import {MainContainer} from './style/booksHome/Container'
+import GlobalStyle from './style/GlobalStyle'
 import ImgContainer from './ImgContainer'
 import Search from './Search';
 export default function Home() {
-    return (
-           <div className="container">
+    return (    
+<>
+           <MainContainer>
               <Header>
                   <Link to='./sign-up'>Badiiyat</Link>
                   <nav>
@@ -22,6 +24,9 @@ export default function Home() {
               </Header>
               <ImgContainer> <Search/>  </ImgContainer>
              <BookContainer/>
-           </div> 
+          </MainContainer>
+      <GlobalStyle/>
+</>
+
     )
 }

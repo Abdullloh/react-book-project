@@ -22,11 +22,12 @@
 }
 input{
     height: 44px;
+    padding: 0 35px 0 15px;
     width: 298px;
     border-radius: 10px;
     border: 1px solid #B4B4BB;
     outline: none;
-    padding: 0 15px;
+    /* padding: 0 15px; */
     margin-top: 16px;
 }
 .colRight{
@@ -47,4 +48,9 @@ input{
 }
 .button:hover{
     background: black;
+}
+.link{
+    color: rgba(84, 159, 249, 1);
+    text-decoration: none;
+    margin-left: 6px;
 }

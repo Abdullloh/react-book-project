@@ -27,6 +27,13 @@
     cursor: pointer;
     border: transparent;
     margin-top: 20px;
+    transition: .6s;
+}
+.button:hover{
+    color:#152540 ;
+    background: #fff;
+    border:1px solid #152540;
+    transition: .4s;
 }
 .signContainer{
     display: flex;
@@ -36,8 +43,33 @@ form{
     display: flex;
     flex-direction: column;
 }
-a{
+.link{
     color: rgba(84, 159, 249, 1);
     text-decoration: none;
     margin-left: 6px;
+}
+.select{
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    padding: 5px 25px;
+    border: 1px solid #00000070;
+    border-radius: 6px;
+    cursor: pointer;
+    outline: none;
+}
+.visibleIcon{
+    width: 10%;
+    display: flex;
+    outline: none;
+    margin-left: 20px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: 290px;
+    bottom: 33px;
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    cursor: pointer;
 }

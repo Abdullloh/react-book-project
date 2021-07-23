@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 const BookContainerStyle = styled.div`
 position: relative;
-top: 120px;
 padding: 10px 0;
 #bookContainer{
     display: flex;

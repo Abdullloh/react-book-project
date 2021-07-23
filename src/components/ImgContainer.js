@@ -6,14 +6,18 @@ export default function imgContainer(props) {
     width: '100%',
      display: 'flex',
      alignItems: 'center',
-     justifyContent: 'center'
+     justifyContent: 'center',
+     flexDirection:'column'
   }
     return (
        <div style={style}>
           <Container>
+            <p>Temuriylar 
+davri 
+adabiyoti</p>
           <img src={bg} alt="bg" />
-          {props.children}
         </Container>
+          {props.children}
        </div>
     )
 }
