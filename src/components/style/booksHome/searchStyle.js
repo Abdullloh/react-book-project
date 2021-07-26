@@ -23,16 +23,18 @@ const SearchContainer = styled.div`
           color:  #C9AC8C;
           font-size: 31px;
         }
+     div{
+       width:100%;
         input{
-            height:47px;
-            width:80%;
-            background: #404040;
-            border-radius: 15px;
-            border:none;
+          height:47px;
+          width:70%;
+          background: #404040;
+          border-radius: 15px;
+          border:none;
         }
         button{
             height:47px;
-            width:20%;
+            width:25%;
             background: #C9AC8C;
             border-radius: 15px;
             border:none;
@@ -40,7 +42,7 @@ const SearchContainer = styled.div`
             color: #3C2710;
             font-size: 16px;
             margin-left:1.5rem;
-
         }
+     }
 `
 export{SearchContainer}
