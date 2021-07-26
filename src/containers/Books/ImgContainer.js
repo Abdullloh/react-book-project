@@ -1,6 +1,6 @@
 import React from 'react'
-import bg from './Auth/img/bg.svg'
-import {Container} from './style/booksHome/imgContainerStyle';
+import bg from '../../assets/images/bg.svg'
+import {Container} from '../../style/booksHome/imgContainerStyle';
 export default function imgContainer(props) {
   const style ={
     width: '100%',

@@ -1,7 +1,7 @@
 import React ,{useState}from 'react';
 import axios from 'axios';
-import {BookContainerStyle} from './style/booksHome/bookContainerStyle'
-import Img from './Book.svg'
+import {BookContainerStyle} from '../../style/booksHome/bookContainerStyle'
+import Img from '../../assets/images/Book.svg'
 
 
 export default function BookContainer() {

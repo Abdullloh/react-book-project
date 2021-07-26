@@ -1,8 +1,8 @@
 import React from 'react'
-import Home from './components/Home'
+import Home from './containers/Books/Home'
 import {Switch,Route,Redirect} from 'react-router-dom'
-import SignIn from './components/Auth/SignIn';
-import SignUp from './components/Auth/SignUp';
+import SignIn from './containers/Auth/SignIn';
+import SignUp from './containers/Auth/SignUp';
 
 function App() {
   const token  = window.localStorage.getItem('token')
@@ -20,10 +20,13 @@ function App() {
    )
   }
   return (
+<>
+     <Redirect to='/home'/>
        <Switch>
         <Route exact path="/home" render={()=><Home/>}/>
-        {/* <Route component={Home}/> */}
+        <Route component={Home}/>
       </Switch>
+</>
   )
 }
 export default App;

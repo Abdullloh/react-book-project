@@ -1,12 +1,12 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
-import {Header} from './style/booksHome/HeaderStyle'
+import {Header} from '../../style/booksHome/HeaderStyle'
 import BookContainer from './BookContainer'
-import {MainContainer} from './style/booksHome/Container'
-import GlobalStyle from './style/GlobalStyle'
+import {MainContainer} from '../../style/booksHome/Container'
+import GlobalStyle from '../../style/GlobalStyle'
 import ImgContainer from './ImgContainer'
 import Search from './Search';
-import Img from './Auth/img/userImage.svg';
+import Img from '../../assets/images/userImage.svg';
 
 export default function Home() {
     return (    

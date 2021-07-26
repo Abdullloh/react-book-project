@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from "react";
-import Img from "./img/SignUp.png";
+import Img from "../../assets/images/SignUp.png";
 import { Link, Route } from "react-router-dom";
 import classes from "./signUp.module.css";
 import SignIn from "./SignIn";

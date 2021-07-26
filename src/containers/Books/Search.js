@@ -1,5 +1,5 @@
 import React from 'react'
-import {SearchContainer} from './style/booksHome/searchStyle'
+import {SearchContainer} from '../../style/booksHome/searchStyle'
 export default function Search() {
     return (
         <SearchContainer>

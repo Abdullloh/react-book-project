@@ -1,5 +1,5 @@
 import React, { useState, useRef, useContext } from "react";
-import Img from "./img/SignIn.jpg";
+import Img from "../../assets/images/SignIn.jpg";
 import { Link } from "react-router-dom";
 import classes from "./signIn.module.css";
 import axios from "axios";
