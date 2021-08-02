@@ -35,25 +35,7 @@ padding: 10px 0;
     flex-wrap: wrap;
     padding: 0 80px;
     margin-top: 2rem;
-    .book{
-        img{
-            border-radius: 15px;
-        }
-       .info{
-        h6{
-            font-size: 20px;
-            line-height: 22px;
-            text-align: center;
-            color: #C9AC8C;
-        }
-        p{
-            font-weight: 300;
-            font-size: 12px;
-            line-height: 144.4%;
-            color: rgba(255, 255, 255, 0.6);
-        }
-       }
-    }
+  
 }
   
 ` 

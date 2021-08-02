@@ -5,14 +5,17 @@ import classes from "./signIn.module.css";
 import axios from "axios";
 import ModeContext from "../../Context/mode-context";
 import themes from "../../Context/mode-context";
+import { useDispatch ,useSelector} from 'react-redux';
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/all";
-
+import { updateUserAction} from '../../store/actions/userActions';
 export default function SignIn() {
   const [signIn, setSign] = useState({
     email: "",
     password: "",
   });
-
+  const dispatch = useDispatch();
+  const user = useSelector(state => state.user)
+  console.log(user)
   const passwordRef = useRef();
   const [errors, setErrors] = useState("");
 
@@ -31,20 +34,19 @@ export default function SignIn() {
 
   const submitForm = (e) => {
     e.preventDefault();
-    const { email, password } = signIn;
-    const user = {
-      email,
-      password,
-    };
+    
     axios
-      .post("/api/login", user)
+      .post("/api/login", signIn)
       .then((res) => {
         console.log(res);
-        const { success, token } = res.data;
+        const { success, token,user } = res.data;
         if (success) {
           alert("Succesfully Log In");
           window.location.pathname = "./home";
+          dispatch(updateUserAction({user,token}));
           localStorage.setItem("token", token);
+          localStorage.setItem('token', token);
+          localStorage.setItem('user', JSON.stringify(user));
         } else {
           const { error } = res.data;
           console.log(error);

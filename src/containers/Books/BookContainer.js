@@ -1,39 +1,26 @@
-import React ,{useState}from 'react';
+import React ,{useState,useEffect}from 'react';
 import axios from 'axios';
 import {BookContainerStyle} from '../../style/booksHome/bookContainerStyle'
-import Img from '../../assets/images/Book.svg'
-
+import BookItem from './BookItem'
 
 export default function BookContainer() {
-    // const[books,setBooks] = useState({
-    //     title:'',
-    //     price:'',
-    //     author:''
-    // })
-              
-    const fetchBooks =  () =>{
-      const {data} =  axios('https://book.alitechbot.uz/api/books')
-      .then(data=> {
-          console.log(data)
-          const{docs} = data.data.payload
-          console.log(docs);
-          docs.forEach(item=>{
-              const{descrition,country,language,pages,price,title,imageLink,_id} = item
-              let container = document.getElementById('books')
-              container.innerHTML += `
-               <div className="book">
-                  <img src='${Img}'>
-                  <div className="info">
-                     <h6>Dunyoning ishlari</h6>
-                     <p>Dunyoning ishlari</p>
-                     <a href="">4.1 • 3400 ta fikrlar</a>
-                  </div>
-               </div>
-              `
-           })
-      })
+
+    const [books,setBooks] = useState([])   
+    
+    const fetchBooks = async () =>{
+    try {
+        const {data} = await  axios('https://book.alitechbot.uz/api/books')
+        console.log(data);
+        if (data.success) {
+          setBooks(data.payload.docs);
+        }
+    } catch (error) {
+        console.log(error);
+     }
     }
-     const [books,setBooks] = useState(fetchBooks)
+    useEffect(() => {
+        fetchBooks();
+      }, []);
      console.log(books);
 
     return (
@@ -46,10 +33,20 @@ export default function BookContainer() {
                 <li><a href="#">Sovet davri </a></li>
                 <li><a href="#">Mustaqillik davri</a></li>
             </ul>
-        </div>
-        <div id="books">
-            {/* {fetchBooks()} */}
-        </div>
+        
+            <div id='books'>
+            {
+          books.map(item => (
+            <BookItem
+              key={item._id}
+              id={item._id}
+              title={item.title}
+              imageLink={item.imageLink}
+            />
+          )
+          )}
+            </div>
+            </div>
         </BookContainerStyle>
   
     )

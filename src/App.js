@@ -1,8 +1,12 @@
 import React from 'react'
-import Home from './containers/Books/Home'
+import Books from './containers/Books'
 import {Switch,Route,Redirect} from 'react-router-dom'
 import SignIn from './containers/Auth/SignIn';
 import SignUp from './containers/Auth/SignUp';
+import BookView from './containers/Books/BookView'
+import MyAccount from './containers/User/MyAccount';
+import Security from './containers/User/Security';
+import Settings from './containers/User/Settings';
 
 function App() {
   const token  = window.localStorage.getItem('token')
@@ -21,10 +25,14 @@ function App() {
   }
   return (
 <>
-     <Redirect to='/home'/>
+     {/* <Redirect to='/books'/> */}
        <Switch>
-        <Route exact path="/home" render={()=><Home/>}/>
-        <Route component={Home}/>
+        <Route exact path="/books" render={()=><Books/>}/>
+        <Route exact path="/my-account" render={()=><MyAccount/>}/>
+        <Route exact path="/security" render={()=><Security/>}/>
+        <Route exact path="/settings" render={()=><Settings/>}/>
+        <Route component={BookView} exact path='/books/:id' />
+        <Route component={Books}/>
       </Switch>
 </>
   )

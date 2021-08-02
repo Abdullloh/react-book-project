@@ -59,6 +59,25 @@ const Header = style.header`
                 }
             }
         }
+        .drop-down{
+            position: relative;
+            width: 118px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            cursor:pointer;
+            img{
+                border-radius:50%;
+            }
+            span{
+                position: absolute;
+                right: 0;
+                cursor:pointer;
+                svg{
+                    color: rgba(255, 255, 255, 0.5)
+                }
+            }
+        }
     }
 
 `
