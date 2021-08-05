@@ -3,7 +3,7 @@ import * as actions from '../actionTypes'
 export const  updateUserAction = ({user,token})=>{
     console.log(user,token)
   return {
-    payload:{user,token},
     type:actions.UPDATE_USER,
+    payload:{user,token},
   }
 }

@@ -1,9 +1,10 @@
 import React from 'react'
-
-export default function User() {
+import Header from '../Header'
+export default function Home() {
     return (
         <div>
-                  
+            <Header/>
+           <h1>User account</h1>       
         </div>
     )
 }

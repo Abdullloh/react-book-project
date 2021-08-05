@@ -1,12 +1,15 @@
-import React, { useState, useCallback } from "react";
+import React, { useState} from "react";
 import Img from "../../assets/images/SignUp.png";
 import { Link, Route } from "react-router-dom";
 import classes from "./signUp.module.css";
 import SignIn from "./SignIn";
 import axios from "axios";
+import { useDispatch } from 'react-redux';
+import { updateUserAction} from '../../store/actions/userActions';
 import InputErrorMsg from "./InputErrorMsg";
 
 export default function SignUp() {
+  const dispatch = useDispatch();
   const [state, setState] = useState({
     firstName: "",
     lastName: "",
@@ -25,21 +28,23 @@ export default function SignUp() {
   function submitForm(e) {
     e.preventDefault();
     const { email, firstName, lastName, password } = state;
-    const user = {
+    const user1 = {
       firstName,
       lastName,
       email,
       password,
     };
-    localStorage.setItem("users", JSON.stringify(user));
-
+    localStorage.setItem("users", JSON.stringify(user1));
+    
     axios
       .post("https://book.alitechbot.uz/api/sign-up", state)
       .then((res) => {
-        const { data } = res;
-        if (data.success) {
+        const { data} = res;
+        const {success,user,token} = data
+        if (success) {
           alert("Succed in login");
-          localStorage.setItem("token", data.token);
+          dispatch(updateUserAction(user,token));
+          // localStorage.setItem("token", token);
           window.location.pathname= './home'
         } else {
           console.log("Set error", data);

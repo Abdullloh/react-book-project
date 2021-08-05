@@ -2,6 +2,7 @@ import React from 'react'
 import Books from './containers/Books'
 import {Switch,Route,Redirect} from 'react-router-dom'
 import SignIn from './containers/Auth/SignIn';
+import  Home from './containers/Home/'
 import SignUp from './containers/Auth/SignUp';
 import BookView from './containers/Books/BookView'
 import MyAccount from './containers/User/MyAccount';
@@ -14,7 +15,7 @@ function App() {
   if(!token){
    return(
      <>
-      <Redirect from='/home' to='/sign-in'/>
+      <Redirect from='/books' to='/sign-in'/>
       <Switch>
         <Route exact path="/sign-in" render={()=><SignIn/>}/>
         <Route exact path="/sign-up" render={()=><SignUp/>}/>
@@ -31,6 +32,7 @@ function App() {
         <Route exact path="/my-account" render={()=><MyAccount/>}/>
         <Route exact path="/security" render={()=><Security/>}/>
         <Route exact path="/settings" render={()=><Settings/>}/>
+        <Route exact path="/home" render={()=><Home/>}/>
         <Route component={BookView} exact path='/books/:id' />
         <Route component={Books}/>
       </Switch>

@@ -2,9 +2,11 @@ import React ,{useState,useEffect}from 'react';
 import axios from 'axios';
 import {BookContainerStyle} from '../../style/booksHome/bookContainerStyle'
 import BookItem from './BookItem'
+import {useSelector} from 'react-redux'
 
 export default function BookContainer() {
-
+   const select = useSelector(state=> state.user)
+   console.log()
     const [books,setBooks] = useState([])   
     
     const fetchBooks = async () =>{

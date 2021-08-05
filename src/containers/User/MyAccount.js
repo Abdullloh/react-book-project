@@ -1,9 +1,52 @@
 import React from 'react'
-
+import {IoCameraOutline} from 'react-icons/all'
+import {AccountContainer} from '../../style/Account/AccounContainer';
+import {AccountStyle} from '../../style/Account/AccountStyle'
+import HeaderUser from './HeaderUser'
+import Header from '../Header'
+import Img from '../../assets/images/userImage.svg'
 export default function MyAccount() {
     return (
-        <div>
-            <h1>My Account page</h1>
-        </div>
+       <>
+       <Header/>
+       <HeaderUser/>
+       <AccountContainer>
+         <div className="imgContainer">
+            <div>
+            <img src={Img} alt="" />
+            <IoCameraOutline className='cameraIcon'/>
+            </div>
+         </div>
+         <AccountStyle>
+            <div className="formContainer">
+            <h2>Mening Profilim</h2>
+            <form action="#">
+              <div className="input-wrapper">
+              <label htmlFor="firstName">First Name</label>
+              <input className='accountInput' type="text" id='firstName'  />
+              <p>Please enter your First name</p>
+              </div>
+              <div className="input-wrapper">
+              <label htmlFor="firstName">First Name</label>
+              <input className='accountInput' type="text" id='firstName'  />
+              <p>Please enter your First name</p>
+              </div>
+              <div className="input-wrapper-50">
+               <div className="phone">
+                    <label htmlFor="firstName">First Name</label>
+                    <input className='phone' type="text" id='firstName'  />
+                    <p>Please enter your First name</p>
+               </div>
+               <div className="phone">
+                    <label htmlFor="firstName">First Name</label>
+                    <input className='email' type="text" id='firstName'  />
+                    <p>Please enter your First name</p>
+               </div>
+              </div>
+            </form>
+            </div>
+         </AccountStyle>
+       </AccountContainer>
+       </>
     )
 }

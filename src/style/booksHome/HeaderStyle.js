@@ -1,7 +1,7 @@
 import style from 'styled-components';
 
 
-const Header = style.header`
+const HeaderStyle = style.header`
     height:80px;
     max-width:100%;
     background: #191919;
@@ -81,4 +81,4 @@ const Header = style.header`
     }
 
 `
-export  {Header}
+export  {HeaderStyle}

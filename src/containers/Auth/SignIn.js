@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import classes from "./signIn.module.css";
 import axios from "axios";
 import ModeContext from "../../Context/mode-context";
-import themes from "../../Context/mode-context";
 import { useDispatch ,useSelector} from 'react-redux';
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/all";
 import { updateUserAction} from '../../store/actions/userActions';
@@ -17,7 +16,7 @@ export default function SignIn() {
   const user = useSelector(state => state.user)
   console.log(user)
   const passwordRef = useRef();
-  const [errors, setErrors] = useState("");
+  // const [errors, setErrors] = useState("");
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;

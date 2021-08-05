@@ -1,13 +1,17 @@
 import {createGlobalStyle} from 'styled-components';
-
+// import {} from '../fonts/rotterburg-font/RotternBurg'
 const GlobalStyle = createGlobalStyle`
 *,*::after,*::before {
     margin:0;
     padding:0;
     box-sizing:border-box;
     text-decoration:none;
-    font-family: " Rotterburg Stylish FREE";
-
+}
+@font-face{       
+  font-family: "Ro  tternBug";
+  src: local("RotternBug"),
+  url("../fonts/rotterburg-font/RotternBurg.otf") format("truetype");
+  font-weight: bold;
 }
 ::-webkit-scrollbar {
     width: 7px;
