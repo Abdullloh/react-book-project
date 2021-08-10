@@ -11,6 +11,9 @@
     justify-content: center;
     background: #C9AC8C;
 }
+h1{
+    margin-bottom: 10px;
+}
 .colRight{
     display: flex;
     align-items: center;
@@ -19,7 +22,7 @@
     width: 50%;
 }
 .button{
-    width: 328px;
+    width: 100%;
     height: 46px;
     border-radius: 50px;
     background: #152540;
@@ -38,6 +41,7 @@
 .signContainer{
     display: flex;
     flex-direction: column;
+    line-height: 1;
 }
 form{
     display: flex;
@@ -66,10 +70,21 @@ form{
     align-items: center;
     justify-content: center;
     position: relative;
-    left: 290px;
+    left: 235px;
     bottom: 33px;
     border: none;
     background: transparent;
     font-size: 20px;
     cursor: pointer;
+}
+@media only screen and (max-width: 768px) {
+    .colLeft{
+        display: none;
+    }
+    .colRight{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
 }

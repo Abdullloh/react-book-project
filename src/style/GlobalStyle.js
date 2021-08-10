@@ -7,10 +7,10 @@ const GlobalStyle = createGlobalStyle`
     box-sizing:border-box;
     text-decoration:none;
 }
-@font-face{       
-  font-family: "Ro  tternBug";
+* @font-face{       
+  font-family: "RotternBug";
   src: local("RotternBug"),
-  url("../fonts/rotterburg-font/RotternBurg.otf") format("truetype");
+  url("../fonts/rotterburg-font/RotternBurg.otf") format("otf");
   font-weight: bold;
 }
 ::-webkit-scrollbar {

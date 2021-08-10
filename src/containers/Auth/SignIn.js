@@ -7,7 +7,10 @@ import ModeContext from "../../Context/mode-context";
 import { useDispatch ,useSelector} from 'react-redux';
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/all";
 import { updateUserAction} from '../../store/actions/userActions';
+import {useHistory} from 'react-router-dom';
+
 export default function SignIn() {
+  const history = useHistory();
   const [signIn, setSign] = useState({
     email: "",
     password: "",
@@ -41,11 +44,8 @@ export default function SignIn() {
         const { success, token,user } = res.data;
         if (success) {
           alert("Succesfully Log In");
-          window.location.pathname = "./home";
+          history.push('')
           dispatch(updateUserAction({user,token}));
-          localStorage.setItem("token", token);
-          localStorage.setItem('token', token);
-          localStorage.setItem('user', JSON.stringify(user));
         } else {
           const { error } = res.data;
           console.log(error);

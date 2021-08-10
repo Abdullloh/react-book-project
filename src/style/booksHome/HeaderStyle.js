@@ -5,6 +5,7 @@ const HeaderStyle = style.header`
     height:80px;
     max-width:100%;
     background: #191919;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
     padding:0 30px 0 20px;
     align-items: center;  
@@ -50,10 +51,12 @@ const HeaderStyle = style.header`
                     }
                     &:hover{
                         transition:0.5s;
+                        color:#C9AC8C;
                         &::before{
                             width:100%;
                             transition:0.5s;
                             visibility: visible;
+                            background-color:#C9AC8C;
                         }
                     }
                 }
@@ -69,14 +72,7 @@ const HeaderStyle = style.header`
             img{
                 border-radius:50%;
             }
-            span{
-                position: absolute;
-                right: 0;
-                cursor:pointer;
-                svg{
-                    color: rgba(255, 255, 255, 0.5)
-                }
-            }
+          }
         }
     }
 

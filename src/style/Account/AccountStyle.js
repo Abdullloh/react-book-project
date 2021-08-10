@@ -11,6 +11,30 @@ padding: 50px 30px;
     max-width: 100%;
     form{
         max-width: 100%;
+        button{
+            height: 46px;
+    padding: 12px 20px;
+    font-weight: 700;
+    font-family: "Roboto Bold";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s linear;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #fff;
+    background: #152540;
+    border: 1px solid #152540;
+    margin-top: 35px;
+    margin-left: auto;
+    &:hover{
+        outline: none;
+        background: #fff;
+        color: #152540;
+    }
+        }
       .input-wrapper{
         label{
             display:block;

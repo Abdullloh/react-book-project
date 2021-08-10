@@ -7,9 +7,11 @@ import axios from "axios";
 import { useDispatch } from 'react-redux';
 import { updateUserAction} from '../../store/actions/userActions';
 import InputErrorMsg from "./InputErrorMsg";
+import {useHistory} from 'react-router-dom';
 
 export default function SignUp() {
   const dispatch = useDispatch();
+  const history = useHistory();
   const [state, setState] = useState({
     firstName: "",
     lastName: "",
@@ -43,9 +45,10 @@ export default function SignUp() {
         const {success,user,token} = data
         if (success) {
           alert("Succed in login");
-          dispatch(updateUserAction(user,token));
-          // localStorage.setItem("token", token);
-          window.location.pathname= './home'
+          dispatch(updateUserAction({user,token}));
+          localStorage.setItem("token", token);
+          localStorage.setItem('user',user)
+          history.push('/home');
         } else {
           console.log("Set error", data);
           const msg = handleErrorObj(data?.msg);
@@ -99,42 +102,41 @@ export default function SignUp() {
             className={classes.form}
             action="#"
           >
-            {/* <InputErrorMsg type="firstName" errorObj={errors} /> */}
-            <InputErrorMsg type="firstName" errorObj={errors} />
             <input
               onChange={handleInputChange}
               type="firstName"
               name="firstName"
               placeholder="First Name"
             />
-             <InputErrorMsg type="lastName" errorObj={errors} />
+            <InputErrorMsg type="firstName" errorObj={errors} />
             <input
               onChange={handleInputChange}
               type="text" 
               name="lastName"
               placeholder="Last Name"
             />
-                <InputErrorMsg type="phone" errorObj={errors} />
+             <InputErrorMsg type="lastName" errorObj={errors} />
             <input
               onChange={handleInputChange}
               type="tel"
               name="phone"
               placeholder="Phone"
             />
-         <InputErrorMsg type="email" errorObj={errors} />
+                <InputErrorMsg type="phone" errorObj={errors} />
             <input
               onChange={handleInputChange}
               type="email"
               name="email"
               placeholder="Email"
             />
-              <InputErrorMsg type="password" errorObj={errors} />
+         <InputErrorMsg type="email" errorObj={errors} />
             <input
               onChange={handleInputChange}
               type="password"
               name="password"
               placeholder="Password"
             />
+              <InputErrorMsg type="password" errorObj={errors} />
             
             <button className={classes.button}> Next step </button>
           </form>

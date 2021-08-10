@@ -14,7 +14,7 @@
 .signContainer{
     display: flex;
     flex-direction: column;
-    line-height: 0;
+    line-height: 1;
 }
 .form{
     display: flex;
@@ -37,7 +37,7 @@ input{
     width: 50%;
 }
 .button{
-    width: 328px;
+    width: 100%;
     height: 46px;
     border-radius: 50px;
     background: #152540;
@@ -53,4 +53,15 @@ input{
     color: rgba(84, 159, 249, 1);
     text-decoration: none;
     margin-left: 6px;
+}
+@media only screen and (max-width: 768px) {
+    .colLeft{
+        display: none;
+    }
+    .colRight{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
 }

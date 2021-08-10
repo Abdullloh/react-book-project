@@ -1,19 +1,24 @@
-import * as actions from '../actionTypes'
+import {CLEAR_USER,UPDATE_USER} from '../actionTypes';
+
  const initialState= {
      token:null,
-     user:{}
- }
+     user:{
+
+     },
+ };
 const userReducer = (state = initialState, action) => {
-  const { user, token } = {...action?.payload }
-  console.log(state,action)
-    console.log(user,token)
+  const { user, token } = { ...action?.payload };
+
     switch (action.type) {
-        case actions.UPDATE_USER: {
+        case UPDATE_USER: {
           return { ...state, user, token }
+        }
+        case CLEAR_USER: {
+          return initialState;
         }
         default: {
             return state;
           }
     }
-}
+};
 export default userReducer

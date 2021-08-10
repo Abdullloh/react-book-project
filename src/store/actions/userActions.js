@@ -1,9 +1,14 @@
-import * as actions from '../actionTypes'
+import { UPDATE_USER,CLEAR_USER } from "../actionTypes"
 //Action Creator
-export const  updateUserAction = ({user,token})=>{
-    console.log(user,token)
+export const  updateUserAction = ({user,token}) => {
+    
   return {
-    type:actions.UPDATE_USER,
     payload:{user,token},
+    type:UPDATE_USER,
+  }
+}
+export const  clearUserAction = () =>{
+  return {
+    type:CLEAR_USER
   }
 }

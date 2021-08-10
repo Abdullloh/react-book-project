@@ -4,7 +4,6 @@ import BookContainer from './BookContainer'
 import {MainContainer} from '../../style/booksHome/Container'
 import GlobalStyle from '../../style/GlobalStyle'
 import ImgContainer from './ImgContainer'
-import Search from './Search';
 import Header from '../Header'
 
 
@@ -14,14 +13,12 @@ export default function Books() {
     console.log(user)
     return (    
 <>
-           <MainContainer>
-         <Header/>
-             <ImgContainer> 
-                 <Search/>  
-             </ImgContainer>
+    <MainContainer>
+             <Header/>
+             <ImgContainer/> 
              <BookContainer/>
-          </MainContainer>
-      <GlobalStyle/>
+             <GlobalStyle/>
+    </MainContainer>
 </>
 
     )

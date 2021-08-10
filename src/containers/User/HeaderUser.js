@@ -1,6 +1,8 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import {HeaderUserStyle} from './HeaderUserStyle'
+import { Tabs } from 'antd';
+import MyAccount from './MyAccount'
 export default function HeaderUser() {
     return (
        <HeaderUserStyle>
