@@ -40,7 +40,11 @@ const HeaderUserStyle = styled.div`
       }
   }
   .active{
-    background: hsla(0,0%,100%,.2)
+    background: hsla(0,0%,100%,.2);
+    span{
+      color: #fff;
+      background: #152540;
+    }
   }
  
 

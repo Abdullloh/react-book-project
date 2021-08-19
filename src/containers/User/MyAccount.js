@@ -1,11 +1,50 @@
-import React from 'react'
+import React,{useState} from 'react'
 import {IoCameraOutline} from 'react-icons/all'
 import {AccountContainer} from '../../style/Account/AccounContainer';
 import {AccountStyle} from '../../style/Account/AccountStyle'
 import HeaderUser from './HeaderUser'
 import Header from '../Header'
-import Img from '../../assets/images/userImage.svg'
+import Webcam from "react-webcam";
+import Img from '../../assets/images/userImage.svg';
+
 export default function MyAccount() {
+const WebcamComponent = () => <Webcam />;
+const videoConstraints = {
+   width: 220,
+   height: 200,
+   facingMode: "user"
+ };
+ const [image,setImage]=useState('');
+ const webcamRef = React.useRef(null);
+ const capture = React.useCallback(
+       () => {
+         const imageSrc = webcamRef.current.getScreenshot();
+         setImage(imageSrc)
+       },
+   
+       [webcamRef]
+     );
+ const WebcamCapture = (e) => {
+    e.preventDefault()
+      capture()
+     
+      }
+      console.log(image)
+    //  return (
+    //    <div className="webcam-container">
+    //      <Webcam
+    //        audio={false}
+    //        height={200}
+    //        ref={webcamRef}
+    //        screenshotFormat="image/jpeg"
+    //        width={220}
+    //        videoConstraints={videoConstraints}
+    //      />
+    //      <button 
+    //      onClick={(e)=>{WebcamCapture(e)}}>
+    //      Capture</button>
+    //    </div>
+    //  );
     return (
        <>
        <Header/>
@@ -13,8 +52,16 @@ export default function MyAccount() {
        <AccountContainer>
          <div className="imgContainer">
             <div>
+               <Webcam
+               audio={false}
+               height={200}
+               ref={webcamRef}
+               screenshotFormat="image/jpeg"
+               width={220}
+               videoConstraints={videoConstraints}
+               />
             <img src={Img} alt="" />
-            <IoCameraOutline className='cameraIcon'/>
+            <IoCameraOutline onClick={(e)=>WebcamCapture(e)} className='cameraIcon'/>
             </div>
          </div>
          <AccountStyle>
