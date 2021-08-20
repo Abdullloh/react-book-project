@@ -32,7 +32,7 @@ export default function imgContainer(props) {
                 <img src="https://cdn.pixabay.com/photo/2021/08/01/13/10/zakynthos-6514351__340.jpg" style={contentStyle} alt="" />
                 </div>
                 <div>
-                <img src="https://cdn.pixabay.com/photo/2021/07/26/07/32/travel-6493621__340.jpg" style={contentStyle} alt="" />
+                <img src="http://cdn.pixabay.com/photo/2021/07/26/07/32/travel-6493621__340.jpg" style={contentStyle} alt="" />
                 </div>
             </Carousel>
                <form action="#">
